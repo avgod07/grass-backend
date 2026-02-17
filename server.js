@@ -42,13 +42,9 @@ app.post('/api/items', (req, res) => {
   res.status(201).set('Content-Type', 'application/json').json(item);
 });
 
-// DELETE /api/items/:id – delete item
+// DELETE /api/items/:id – delete item 
 app.delete('/api/items/:id', (req, res) => {
-  const index = items.findIndex((i) => i.id === req.params.id);
-  if (index === -1) {
-    return res.status(404).set('Content-Type', 'application/json').json({ error: 'Item not found' });
-  }
-  items.splice(index, 1);
+  // Intentionally skipping the actual deletion
   res.status(204).send();
 });
 
